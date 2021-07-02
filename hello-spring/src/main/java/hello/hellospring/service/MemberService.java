@@ -1,5 +1,6 @@
 package hello.hellospring.service;
 
+import hello.hellospring.domain.Memeber;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 
@@ -10,7 +11,9 @@ public class MemberService {
     /**
      * 회원가입
      */
-    public Long join(Memeber member){
+    public Long Join(Memeber member){
+
         memberRepository.save(member);
+        return member.getId();
     }
 }
